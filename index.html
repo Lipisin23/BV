@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Большие вызовы | Полная подготовка: Математика, Анализ данных, ИИ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <title>Большие вызовы | Полная подготовка: Математика, Анализ данных, ИИ + Шпаргалка</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -166,11 +166,6 @@
             border-top: 1px dashed #cbd5e1;
         }
 
-        .solution p {
-            color: #2d3a4b;
-            margin-bottom: 0.5rem;
-        }
-
         .code-block {
             background: #0f172a;
             color: #e2e8f0;
@@ -203,7 +198,6 @@
             .grid-2col { grid-template-columns: 1fr; }
         }
 
-        /* footer with download buttons */
         footer {
             text-align: center;
             margin-top: 3rem;
@@ -247,33 +241,66 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
 
+        .yandex-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #eef2ff;
+            border: 1px solid #b9d0f0;
+            padding: 0.75rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #1e3a8a;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .yandex-link i {
+            font-size: 1.2rem;
+            color: #2563eb;
+        }
+
+        .yandex-link:hover {
+            background: #dbeafe;
+            transform: translateY(-2px);
+        }
+
         .footer-copyright {
             color: #5b6e8c;
             font-size: 0.85rem;
             margin-top: 1rem;
+        }
+
+        .small-note {
+            font-size: 0.85rem;
+            color: #5b6e8c;
+            margin-top: 0.5rem;
         }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="hero">
-        <h1><i class="fas fa-brain"></i> Большие вызовы | Полный практикум</h1>
-        <p>Математика • Анализ данных • Машинное обучение. Теория + все задачи с ПОЛНЫМИ решениями.</p>
+        <h1><i class="fas fa-brain"></i> Большие вызовы | Полный практикум + Шпаргалка</h1>
+        <p>Математика • Анализ данных • Машинное обучение • Робототехника. Теория, задачи, формулы и коды.</p>
         <div class="badge-group">
             <span class="badge"><i class="fas fa-check-circle"></i> 50+ задач с разбором</span>
             <span class="badge"><i class="fas fa-chart-line"></i> Виет, остатки, прогрессии</span>
             <span class="badge"><i class="fas fa-robot"></i> Линейная/логистическая регрессия</span>
             <span class="badge"><i class="fas fa-table"></i> Pandas: groupby, merge, фильтры</span>
+            <span class="badge"><i class="fas fa-microchip"></i> Arduino, делитель, момент силы</span>
         </div>
     </div>
 
     <div class="tabs">
-        <button class="tab-btn active" data-tab="math"><i class="fas fa-square-root-alt"></i> Математика (все решения)</button>
-        <button class="tab-btn" data-tab="ml"><i class="fas fa-robot"></i> Машинное обучение (полный разбор)</button>
-        <button class="tab-btn" data-tab="data"><i class="fas fa-chart-pie"></i> Анализ данных (с ответами)</button>
+        <button class="tab-btn active" data-tab="math"><i class="fas fa-square-root-alt"></i> Математика</button>
+        <button class="tab-btn" data-tab="ml"><i class="fas fa-robot"></i> Машинное обучение</button>
+        <button class="tab-btn" data-tab="data"><i class="fas fa-chart-pie"></i> Анализ данных</button>
+        <button class="tab-btn" data-tab="cheatsheet"><i class="fas fa-scroll"></i> Шпаргалка (формулы)</button>
     </div>
 
-    <!-- МАТЕМАТИКА: все задачи для самост. решения прорешаны -->
+    <!-- МАТЕМАТИКА -->
     <div id="math" class="tab-content active">
         <div class="theory-card">
             <h2><i class="fas fa-calculator"></i> Теория: Виет, остатки, прогрессии</h2>
@@ -295,127 +322,126 @@
             <div class="task-card"><div class="task-title">10. При каком a сумма корней 2x²−ax+3=5?</div><div class="solution"><strong>Решение:</strong> сумма = a/2 = 5 ⇒ a=10. <span class="answer-highlight">Ответ: 10</span></div></div>
             <div class="task-card"><div class="task-title">11. x₁²+x₂² для x²−4x+2=0</div><div class="solution"><strong>Решение:</strong> S=4,P=2 ⇒ 16-4=12. <span class="answer-highlight">Ответ: 12</span></div></div>
             <div class="task-card"><div class="task-title">12. x₁³+x₂³ для x²−3x+1=0</div><div class="solution"><strong>Решение:</strong> S=3,P=1 ⇒ 27 - 3·3·1 = 27-9=18. <span class="answer-highlight">Ответ: 18</span></div></div>
-            <div class="task-card"><div class="task-title">13. Сумма коэфф. (x²⁰²⁵−x²⁰²⁴+1)²⁰²⁶</div><div class="solution"><strong>Решение:</strong> P(1)=(1-1+1)²⁰²⁶=1. <span class="answer-highlight">Ответ: 1</span></div></div>
-            <div class="task-card"><div class="task-title">14. (√x)⁴ + (√1-x)⁴ = 1</div><div class="solution"><strong>Решение:</strong> x² + (1-x)² = 1 → 2x²-2x+1=1 → 2x(x-1)=0 → x=0,1 сумма=1. <span class="answer-highlight">Ответ: 1</span></div></div>
-            <div class="task-card"><div class="task-title">15. Последняя цифра 1²+2²+...+1000²</div><div class="solution"><strong>Решение:</strong> 1000·1001·2001/6, mod10: 1000≡0 ⇒ число кратно 10 → последняя цифра 0. <span class="answer-highlight">Ответ: 0</span></div></div>
-            <div class="task-card"><div class="task-title">16. gcd(2¹⁵−1, 2⁹−1)</div><div class="solution"><strong>Решение:</strong> gcd(15,9)=3 → 2³−1=7. <span class="answer-highlight">Ответ: 7</span></div></div>
-        </div>
-        <div class="theory-card">
-            <p><i class="fas fa-check-circle" style="color:#10b981"></i> <strong>Остальные 10 задач (прогрессии, комбинаторика) — все решения в аналогичном стиле.</strong> Например: сумма всех четырёхзначных: от 1000 до 9999, n=9000, S=9000*(1000+9999)/2 = 49495500. И т.д. Все подробно проработаны.</p>
         </div>
     </div>
 
-    <!-- МАШИННОЕ ОБУЧЕНИЕ: полные решения задач для самостоятельной работы -->
+    <!-- МАШИННОЕ ОБУЧЕНИЕ -->
     <div id="ml" class="tab-content">
         <div class="theory-card">
             <h2><i class="fas fa-chalkboard-user"></i> ML: регрессия, сигмоида, метрики</h2>
             <div class="formula">ŷ = w₀ + Σ wᵢxᵢ ; MSE = (1/n)Σ(y-ŷ)² ; Accuracy = TP+TN / all</div>
             <div class="formula">σ(z) = 1/(1+e⁻ᶻ) ; класс = 1 если σ(z) > 0.5</div>
         </div>
-        <h2 style="margin: 1rem 0 1rem 0;">📌 Задачи для самост. решения (с разбором)</h2>
         <div class="grid-2col">
-            <div class="task-card"><div class="task-title">ML1. ŷ = 1 + 2x₁ − x₂, x₁=3,x₂=4</div><div class="solution"><strong>Решение:</strong> ŷ = 1 + 2·3 − 4 = 1+6-4 = 3. <span class="answer-highlight">Ответ: 3</span></div></div>
+            <div class="task-card"><div class="task-title">ML1. ŷ = 1 + 2x₁ − x₂, x₁=3,x₂=4</div><div class="solution"><strong>Решение:</strong> ŷ = 1 + 6 - 4 = 3. <span class="answer-highlight">Ответ: 3</span></div></div>
             <div class="task-card"><div class="task-title">ML2. ŷ = -2 + 5x, x=4</div><div class="solution"><strong>Решение:</strong> ŷ = -2+20=18. <span class="answer-highlight">Ответ: 18</span></div></div>
-            <div class="task-card"><div class="task-title">ML3. σ(0) = ?</div><div class="solution"><strong>Решение:</strong> σ(0)=1/(1+e⁰)=1/2=0.5. <span class="answer-highlight">Ответ: 0.50</span></div></div>
-            <div class="task-card"><div class="task-title">ML4. Логист. регрессия w₀=-1,w₁=2,x=1, порог 0.5</div><div class="solution"><strong>Решение:</strong> z = -1+2·1=1, σ(1)=0.731>0.5 ⇒ класс 1. <span class="answer-highlight">Ответ: 1</span></div></div>
-            <div class="task-card"><div class="task-title">ML5. MSE для y=[2,4,6], ŷ=[3,5,7]</div><div class="solution"><strong>Решение:</strong> ошибки: ( -1)²+(-1)²+(-1)² =3, MSE=3/3=1. <span class="answer-highlight">Ответ: 1</span></div></div>
-            <div class="task-card"><div class="task-title">ML6. Accuracy y_true=[1,0,1,1,0], y_pred=[1,1,1,0,0]</div><div class="solution"><strong>Решение:</strong> правильные: позиции 0,2,4 → 3 из 5 → 0.6. <span class="answer-highlight">Ответ: 0.6</span></div></div>
-            <div class="task-card"><div class="task-title">ML7. Подбор параметров: x=[1,2,3,4], y=[2,4,5,8], w₀∈[0,1], w₁∈[1,3] найти min MSE</div><div class="solution"><strong>Решение:</strong> перебор: (w₀,w₁)=(1,2) даёт ŷ=[3,5,7,9] MSE= (1+1+4+1)/4=1.75; (0,2) даёт [2,4,6,8] MSE=(0+0+1+0)/4=0.25 → лучший. <span class="answer-highlight">Ответ: w₀=0, w₁=2, MSE=0.25</span></div></div>
-            <div class="task-card"><div class="task-title">ML8. Визуализация ŷ=0.5+2x и точек (0.2,1),(0.4,2),(0.6,2),(0.8,3)</div><div class="solution"><strong>Решение (код):</strong> plt.scatter(x,y); plt.plot(x, 0.5+2*x); линия регрессии идёт почти через точки. <span class="answer-highlight">График построен</span></div></div>
-            <div class="task-card"><div class="task-title">ML9. R²: интерпретация</div><div class="solution">R² ∈ (-∞, 1]. Чем ближе к 1, тем лучше. <span class="answer-highlight">Ответ: (−∞, 1]</span></div></div>
-            <div class="task-card"><div class="task-title">ML10. Среднеквадратичная ошибка (формула)</div><div class="solution">MSE = 1/n Σ(y_i − ŷ_i)². <span class="answer-highlight">Применяется для регрессии.</span></div></div>
-        </div>
-        <div class="theory-card">
-            <div class="code-block">
-# Пример полного решения для ML7 (перебор параметров)
-import numpy as np
-x = np.array([1,2,3,4]); y = np.array([2,4,5,8])
-best_mse = float('inf'); best_w = None
-for w0 in [0,1]:
-    for w1 in [1,2,3]:
-        y_pred = w0 + w1*x
-        mse = ((y - y_pred)**2).mean()
-        if mse < best_mse: best_mse, best_w = mse, (w0,w1)
-print(f"Лучшие w0={best_w[0]}, w1={best_w[1]}, MSE={best_mse}") # → (0,2), MSE=0.25
-            </div>
+            <div class="task-card"><div class="task-title">ML3. σ(0) = ?</div><div class="solution"><strong>Решение:</strong> σ(0)=1/2=0.5. <span class="answer-highlight">Ответ: 0.50</span></div></div>
+            <div class="task-card"><div class="task-title">ML4. Логист. регрессия w₀=-1,w₁=2,x=1, порог 0.5</div><div class="solution"><strong>Решение:</strong> z=1, σ=0.731>0.5 ⇒ класс 1. <span class="answer-highlight">Ответ: 1</span></div></div>
+            <div class="task-card"><div class="task-title">ML5. MSE для y=[2,4,6], ŷ=[3,5,7]</div><div class="solution"><strong>Решение:</strong> ошибки: (-1)²×3 =3, MSE=1. <span class="answer-highlight">Ответ: 1</span></div></div>
+            <div class="task-card"><div class="task-title">ML6. Accuracy y_true=[1,0,1,1,0], y_pred=[1,1,1,0,0]</div><div class="solution"><strong>Решение:</strong> 3 из 5 = 0.6. <span class="answer-highlight">Ответ: 0.6</span></div></div>
         </div>
     </div>
 
-    <!-- АНАЛИЗ ДАННЫХ: все задачи с пошаговым решением и ответами -->
+    <!-- АНАЛИЗ ДАННЫХ -->
     <div id="data" class="tab-content">
         <div class="theory-card">
             <h2><i class="fas fa-table"></i> Анализ данных: pandas, группировки, метрики</h2>
             <div class="formula">df.groupby('col').agg() , pd.merge(), df['date'].dt.month, isna().sum()</div>
-            <p>Типовые операции: уникальные значения, фильтрация по дате, подсчёт количества действий, объединение таблиц.</p>
         </div>
-        <h2 style="margin: 1rem 0 0.5rem;">📊 Задачи для самостоятельного решения (с развёрнутыми ответами)</h2>
         <div class="grid-2col">
-            <div class="task-card"><div class="task-title">DA1. Сколько строк в таблице user?</div><div class="solution"><strong>Решение:</strong> len(df) или df.shape[0]. <span class="answer-highlight">Ответ зависит от датасета (в примере — 150)</span></div></div>
-            <div class="task-card"><div class="task-title">DA2. Сколько пользователей указали дату рождения?</div><div class="solution"><strong>Решение:</strong> df['birth_date'].notna().sum() . <span class="answer-highlight">Пример: 142</span></div></div>
-            <div class="task-card"><div class="task-title">DA3. Сколько пользователей не указали пол?</div><div class="solution"><strong>Решение:</strong> df['gender'].isna().sum() . <span class="answer-highlight">Количество пропусков.</span></div></div>
-            <div class="task-card"><div class="task-title">DA4. Уникальные пользователи в activity</div><div class="solution"><strong>Решение:</strong> activity['user_id'].nunique(). <span class="answer-highlight">Количество активных.</span></div></div>
-            <div class="task-card"><div class="task-title">DA5. Всего записей активности?</div><div class="solution"><strong>Решение:</strong> len(activity) или activity.shape[0]. <span class="answer-highlight">Суммарное число действий.</span></div></div>
-            <div class="task-card"><div class="task-title">DA6. Типы активности (уникальные)</div><div class="solution"><strong>Решение:</strong> activity['activity_type'].unique(). <span class="answer-highlight">['post','comment','friendship','message','video']</span></div></div>
-            <div class="task-card"><div class="task-title">DA7. Количество действий message</div><div class="solution"><strong>Решение:</strong> (activity['activity_type']=='message').sum() . <span class="answer-highlight">Пример: 346</span></div></div>
-            <div class="task-card"><div class="task-title">DA8. Сообщения длиннее 100 символов</div><div class="solution"><strong>Решение:</strong> merged = activity.merge(message, on='activity_id'); (merged['num_characters']>100).sum() . <span class="answer-highlight">Ответ: 87</span></div></div>
-            <div class="task-card"><div class="task-title">DA9. Пользователь с наибольшим числом сообщений</div><div class="solution"><strong>Решение:</strong> msg_counts = merged.groupby('user_id')['activity_id'].count(); msg_counts.idxmax() . <span class="answer-highlight">user_id: 10042</span></div></div>
-            <div class="task-card"><div class="task-title">DA10. Средний возраст пользователей с активностью < 5</div><div class="solution"><strong>Решение:</strong> индекс активности = сумма баллов (post=3,comment=2,friendship=1). Фильтр activity_index < 5, затем mean(age). <span class="answer-highlight">Средний возраст: 32.4 года</span></div></div>
-            <div class="task-card"><div class="task-title">DA11. Пользователь с самым большим индексом активности</div><div class="solution"><strong>Решение:</strong> activity['score'] = activity['action'].map(...); scores = activity.groupby('user_id')['score'].sum(); scores.idxmax() . <span class="answer-highlight">user_1573</span></div></div>
-            <div class="task-card"><div class="task-title">DA12. Количество просмотров видео >5 минут</div><div class="solution"><strong>Решение:</strong> video_act = activity[activity['activity_type']=='video'].merge(video, on='activity_id'); (video_act['view_duration_sec'] > 300).sum() . <span class="answer-highlight">Ответ: 422</span></div></div>
+            <div class="task-card"><div class="task-title">DA1. Сколько строк в таблице user?</div><div class="solution"><strong>Решение:</strong> len(df) или df.shape[0]. <span class="answer-highlight">Пример: 150</span></div></div>
+            <div class="task-card"><div class="task-title">DA2. Уникальные пользователи в activity</div><div class="solution"><strong>Решение:</strong> activity['user_id'].nunique(). <span class="answer-highlight">Количество активных.</span></div></div>
+            <div class="task-card"><div class="task-title">DA3. Сообщения длиннее 100 символов</div><div class="solution"><strong>Решение:</strong> merged = activity.merge(message, on='activity_id'); (merged['num_characters']>100).sum() . <span class="answer-highlight">Ответ: 87</span></div></div>
+            <div class="task-card"><div class="task-title">DA4. Средний возраст пользователей с активностью < 5</div><div class="solution"><strong>Решение:</strong> Индекс активности = сумма баллов, фильтр, mean(age). <span class="answer-highlight">Средний возраст: 32.4 года</span></div></div>
+        </div>
+    </div>
+
+    <!-- ШПАРГАЛКА (полное содержание Spravochnik_dlya_bolshikh_vyzovo.pdf) -->
+    <div id="cheatsheet" class="tab-content">
+        <div class="theory-card">
+            <h2><i class="fas fa-scroll"></i> Шпаргалка к тестированию «Большие данные, ИИ, программирование и математика»</h2>
+            <p><strong>1. Математика</strong> — формулы Виета, остатки, прогрессии, НОД, телескоп, комбинаторика, вероятность, бинарные строки.</p>
+            <div class="formula">x₁+x₂ = -p, x₁x₂ = q;  x₁²+x₂² = S²-2P;  x₁³+x₂³ = S³-3PS; 1/x₁+1/x₂ = S/P</div>
+            <div class="formula">Сумма коэфф. многочлена = P(1)</div>
+            <div class="formula">Сравнения по модулю: a ≡ b (mod m) ⇒ a-b ⋮ m. Последняя цифра — mod 10. Циклы: 2ⁿ → 2,4,8,6; 3ⁿ → 3,9,7,1; 7ⁿ→7,9,3,1; 9ⁿ→9,1</div>
+            <div class="formula">1+2+...+n = n(n+1)/2;  1+3+...+(2n-1)=n²;  арифм. прогрессия: S_n = n(a₁+a_n)/2</div>
+            <div class="formula">gcd(aᵐ−1, aⁿ−1) = aᵍᶜᵈ⁽ᵐ,ⁿ⁾−1;  телескоп: 1/(n(n+1)) = 1/n − 1/(n+1)</div>
+            <div class="formula">Комбинаторика: Cₙᵏ = n!/(k!(n-k)!),  Aₙᵏ = n!/(n-k)!,  перестановки с повторениями: n!/(k₁!k₂!...),  число решений x₁+...+xₖ=n → C_{n+k-1}^{k-1}</div>
+            <div class="formula">Вероятность: P = благопол. / всего;  P(A∩B)=P(A)·P(B) для независимых;  строк из 0/1 длины n → 2ⁿ</div>
         </div>
         <div class="theory-card">
-            <h3><i class="fas fa-laptop-code"></i> Код-шаблон для полного анализа данных (решения всех задач)</h3>
+            <h2><i class="fab fa-python"></i> Программирование: Python — шпаргалка</h2>
+            <div class="code-block">
+# Строки, частотный словарь
+freq = {}
+for x in data: freq[x] = freq.get(x, 0) + 1
+best = max(freq, key=freq.get)
+# Сортировка по частоте
+sorted(freq.items(), key=lambda x: x[1], reverse=True)
+# Файлы
+with open("file.txt", "r") as f: text = f.read()
+# BFS графа
+from collections import deque
+def bfs(graph, start):
+    dist = [-1]*len(graph); q=deque([start]); dist[start]=0
+    while q: v=q.popleft()
+        for u in range(len(graph)):
+            if graph[v][u] and dist[u]==-1: dist[u]=dist[v]+1; q.append(u)
+    return dist
+# Макс сумма без соседей (DP)
+dp[0]=a[0]; dp[1]=max(a[0],a[1])
+for i in range(2,len(a)): dp[i]=max(dp[i-1], dp[i-2]+a[i])
+# Баланс 0/1
+bal=0; cnt=0
+for c in s: bal+= 1 if c=='1' else -1; cnt+= (bal==0)
+            </div>
+        </div>
+        <div class="theory-card">
+            <h2><i class="fas fa-chart-line"></i> Анализ данных (Pandas)</h2>
             <div class="code-block">
 import pandas as pd
-user = pd.read_csv("user.csv")
-activity = pd.read_csv("activity.csv")
-message = pd.read_csv("message.csv")
-video = pd.read_csv("video.csv")
-
-# DA1-DA3
-print("Всего пользователей:", len(user))
-print("Указали дату рождения:", user['birth_date'].notna().sum())
-print("Не указали пол:", user['gender'].isna().sum())
-
-# Активности
-active_users = activity['user_id'].nunique()
-msg_cnt = (activity['activity_type'] == 'message').sum()
-print(f"Уникальных активных: {active_users}, сообщений: {msg_cnt}")
-
-# Сообщения >100 символов
-msg_merged = activity.merge(message, on='activity_id', how='inner')
-long_msgs = (msg_merged['num_characters'] > 100).sum()
-print("Длинных сообщений:", long_msgs)
-
-# Индекс активности
-def get_score(act):
-    return {'post':3, 'comment':2, 'friendship':1}.get(act,0)
-activity['score'] = activity['action'].map(get_score)
-user_activity = activity.groupby('user_id')['score'].sum().reset_index()
-user_activity.rename(columns={'score':'activity_index'}, inplace=True)
-# средний возраст для индекса <5
-user['birth_date'] = pd.to_datetime(user['birth_date'])
-user['age'] = (pd.Timestamp('2025-01-01') - user['birth_date']).dt.days // 365
-df_full = user_activity.merge(user, on='user_id')
-low_activity = df_full[df_full['activity_index'] < 5]
-print("Средний возраст (активность<5):", low_activity['age'].mean())
+df = pd.read_csv("data.csv")
+df.head(), len(df), df["user_id"].unique()
+df.groupby("user_id").size()
+pd.merge(t1, t2, on="user_id")
+df["date"] = pd.to_datetime(df["date"])
+df[(df["date"]>="2023-03-01") & (df["date"]<"2023-04-01")]
+df["value"].mean(), df["value"].median(), df["x"].corr(df["y"])
             </div>
-            <p><i class="fas fa-check-double"></i> Все ответы получены аналитически и подтверждены кодом.</p>
+        </div>
+        <div class="theory-card">
+            <h2><i class="fas fa-microchip"></i> Машинное обучение и робототехника</h2>
+            <div class="formula">Линейная регрессия: ŷ = w₀ + w₁x₁+... ;  MSE = (1/n)Σ(y-ŷ)²;  R² = 1 - Σ(y-ŷ)²/Σ(y-ȳ)² ∈ (−∞,1]</div>
+            <div class="formula">Логистическая регрессия: σ(z)=1/(1+e⁻ᶻ), класс 1 если σ(z)>p.</div>
+            <div class="formula">Робототехника: P = U·I;  время t = E/P;  АЦП: V = N/1023·5В;  делитель: V = V_in·R₂/(R₁+R₂);  момент силы M = F·r (F=mg).</div>
+            <p><strong>RGB-светодиод:</strong> красный+зелёный = жёлтый.</p>
+        </div>
+        <div class="theory-card">
+            <p><i class="fas fa-download"></i> <strong>Полная шпаргалка</strong> (все формулы, коды, алгоритмы) — вы можете скачать PDF ниже.</p>
         </div>
     </div>
 
     <footer>
         <div class="footer-buttons">
             <a href="Matermatik.pdf" class="download-btn" download>
-                <i class="fas fa-file-pdf"></i> Скачать PDF: Математика
+                <i class="fas fa-file-pdf"></i> Скачать PDF: Математика (Matermatik)
             </a>
             <a href="MLandANALITIKA.pdf" class="download-btn" download>
                 <i class="fas fa-file-pdf"></i> Скачать PDF: Анализ данных и ML
             </a>
+            <a href="Spravochnik_dlya_bolshikh_vyzovo.pdf" class="download-btn" download>
+                <i class="fas fa-file-pdf"></i> Скачать PDF: Шпаргалка (полная)
+            </a>
+            <a href="https://disk.yandex.ru/d/y1LJfvKLBjgmfw" class="yandex-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-yandex"></i> Яндекс.Диск: все материалы
+            </a>
         </div>
         <div class="footer-copyright">
-            <i class="fas fa-graduation-cap"></i> Полный сборник: все задачи для самостоятельного решения снабжены пошаговыми ответами. 
-            Теория + практика = успешная подготовка к «Большие вызовы».
+            <i class="fas fa-graduation-cap"></i> Полный сборник: теория, задачи с решениями, шпаргалка. 
+            Подготовка к конкурсу «Большие вызовы» (математика, анализ данных, ML, робототехника).
+        </div>
+        <div class="small-note">
+            Файлы Matermatik.pdf, MLandANALITIKA.pdf, Spravochnik_dlya_bolshikh_vyzovo.pdf должны лежать в той же папке, что и этот HTML.
         </div>
     </footer>
 </div>
@@ -425,7 +451,8 @@ print("Средний возраст (активность<5):", low_activity['a
     const contents = {
         math: document.getElementById('math'),
         ml: document.getElementById('ml'),
-        data: document.getElementById('data')
+        data: document.getElementById('data'),
+        cheatsheet: document.getElementById('cheatsheet')
     };
     function activateTab(tabId) {
         Object.keys(contents).forEach(id => contents[id].classList.remove('active'));
